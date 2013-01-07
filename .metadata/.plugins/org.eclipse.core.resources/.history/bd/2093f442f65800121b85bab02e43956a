@@ -1,0 +1,15 @@
+//============================================================================
+// Name        : Lab1.cpp
+// Author      : Trevor Dixon
+// Version     :
+// Copyright   : 
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "Hi there" << endl; // prints Hi
+	return 0;
+}

@@ -1,0 +1,22 @@
+11:17:32 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/download.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/download.d" -MT"src/download.d" -o "src/download.o" "../src/download.cpp"
+../src/download.cpp: In function ‘void GetHeaderLines(std::vector<char*>&, int, bool)’:
+../src/download.cpp:117:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../src/download.cpp:124:51: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../src/download.cpp: At global scope:
+../src/download.cpp:140:27: warning: ISO C++ forbids declaration of ‘main’ with no type [-Wreturn-type]
+../src/download.cpp: In function ‘int main(int, char**)’:
+../src/download.cpp:169:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Finished building: ../src/download.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/download.o   
+Finished building target: Lab1
+ 
+
+11:17:32 Build Finished (took 218ms)
+

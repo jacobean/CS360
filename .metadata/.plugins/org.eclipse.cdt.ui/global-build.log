@@ -1,0 +1,122 @@
+11:13:56 **** Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/Lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab1.d" -MT"src/Lab1.d" -o "src/Lab1.o" "../src/Lab1.cpp"
+Finished building: ../src/Lab1.cpp
+ 
+Building file: ../src/sample.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/sample.d" -MT"src/sample.d" -o "src/sample.o" "../src/sample.cpp"
+../src/sample.cpp: In function ‘void GetHeaderLines(std::vector<char*>&, int, bool)’:
+../src/sample.cpp:117:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../src/sample.cpp:124:51: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../src/sample.cpp: At global scope:
+../src/sample.cpp:140:27: warning: ISO C++ forbids declaration of ‘main’ with no type [-Wreturn-type]
+../src/sample.cpp: In function ‘int main(int, char**)’:
+../src/sample.cpp:169:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Finished building: ../src/sample.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/Lab1.o ./src/sample.o   
+./src/sample.o: In function `main':
+/users/home1/guest/t/tdixon2/CS360/Lab1/Debug/../src/sample.cpp:141: multiple definition of `main'
+./src/Lab1.o:/users/home1/guest/t/tdixon2/CS360/Lab1/Debug/../src/Lab1.cpp:12: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [Lab1] Error 1
+11:14:24 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/Lab1.o   
+Finished building target: Lab1
+ 
+11:14:47 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+make: Nothing to be done for `all'.
+11:15:02 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/Lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab1.d" -MT"src/Lab1.d" -o "src/Lab1.o" "../src/Lab1.cpp"
+Finished building: ../src/Lab1.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/Lab1.o   
+Finished building target: Lab1
+ 
+11:15:07 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+make: Nothing to be done for `all'.
+11:15:49 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/Lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab1.d" -MT"src/Lab1.d" -o "src/Lab1.o" "../src/Lab1.cpp"
+Finished building: ../src/Lab1.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/Lab1.o   
+Finished building target: Lab1
+ 
+11:15:55 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/Lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab1.d" -MT"src/Lab1.d" -o "src/Lab1.o" "../src/Lab1.cpp"
+Finished building: ../src/Lab1.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/Lab1.o   
+Finished building target: Lab1
+ 
+11:16:00 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/Lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab1.d" -MT"src/Lab1.d" -o "src/Lab1.o" "../src/Lab1.cpp"
+Finished building: ../src/Lab1.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/Lab1.o   
+Finished building target: Lab1
+ 
+11:16:05 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/Lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Lab1.d" -MT"src/Lab1.d" -o "src/Lab1.o" "../src/Lab1.cpp"
+Finished building: ../src/Lab1.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/Lab1.o   
+Finished building target: Lab1
+ 
+11:16:24 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+make: Nothing to be done for `all'.
+11:17:32 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+Building file: ../src/download.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/download.d" -MT"src/download.d" -o "src/download.o" "../src/download.cpp"
+../src/download.cpp: In function ‘void GetHeaderLines(std::vector<char*>&, int, bool)’:
+../src/download.cpp:117:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../src/download.cpp:124:51: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+../src/download.cpp: At global scope:
+../src/download.cpp:140:27: warning: ISO C++ forbids declaration of ‘main’ with no type [-Wreturn-type]
+../src/download.cpp: In function ‘int main(int, char**)’:
+../src/download.cpp:169:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Finished building: ../src/download.cpp
+ 
+Building target: Lab1
+Invoking: Cross G++ Linker
+g++  -o "Lab1"  ./src/download.o   
+Finished building target: Lab1
+ 
