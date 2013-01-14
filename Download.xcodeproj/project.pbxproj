@@ -1,0 +1,228 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		221E37B7169B604C0086CDDE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 221E37B6169B604C0086CDDE /* main.cpp */; };
+		221E37B9169B604C0086CDDE /* Download.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 221E37B8169B604C0086CDDE /* Download.1 */; };
+		221E37C5169CC7E80086CDDE /* Headers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 221E37C3169CC7E80086CDDE /* Headers.cpp */; };
+		221E37C9169F2BCC0086CDDE /* TCPClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 221E37C7169F2BCC0086CDDE /* TCPClient.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		221E37B0169B604C0086CDDE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				221E37B9169B604C0086CDDE /* Download.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		221E37B2169B604C0086CDDE /* Download */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Download; sourceTree = BUILT_PRODUCTS_DIR; };
+		221E37B6169B604C0086CDDE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		221E37B8169B604C0086CDDE /* Download.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Download.1; sourceTree = "<group>"; };
+		221E37C3169CC7E80086CDDE /* Headers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Headers.cpp; sourceTree = "<group>"; };
+		221E37C4169CC7E80086CDDE /* Headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Headers.h; sourceTree = "<group>"; };
+		221E37C7169F2BCC0086CDDE /* TCPClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TCPClient.cpp; sourceTree = "<group>"; };
+		221E37C8169F2BCC0086CDDE /* TCPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPClient.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		221E37AF169B604C0086CDDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		221E37A7169B604C0086CDDE = {
+			isa = PBXGroup;
+			children = (
+				221E37B5169B604C0086CDDE /* Download */,
+				221E37B3169B604C0086CDDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		221E37B3169B604C0086CDDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				221E37B2169B604C0086CDDE /* Download */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		221E37B5169B604C0086CDDE /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				221E37B6169B604C0086CDDE /* main.cpp */,
+				221E37C7169F2BCC0086CDDE /* TCPClient.cpp */,
+				221E37C8169F2BCC0086CDDE /* TCPClient.h */,
+				221E37B8169B604C0086CDDE /* Download.1 */,
+				221E37C3169CC7E80086CDDE /* Headers.cpp */,
+				221E37C4169CC7E80086CDDE /* Headers.h */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		221E37B1169B604C0086CDDE /* Download */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221E37BC169B604C0086CDDE /* Build configuration list for PBXNativeTarget "Download" */;
+			buildPhases = (
+				221E37AE169B604C0086CDDE /* Sources */,
+				221E37AF169B604C0086CDDE /* Frameworks */,
+				221E37B0169B604C0086CDDE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Download;
+			productName = Download;
+			productReference = 221E37B2169B604C0086CDDE /* Download */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		221E37A9169B604C0086CDDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Trevor Dixon";
+			};
+			buildConfigurationList = 221E37AC169B604C0086CDDE /* Build configuration list for PBXProject "Download" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 221E37A7169B604C0086CDDE;
+			productRefGroup = 221E37B3169B604C0086CDDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				221E37B1169B604C0086CDDE /* Download */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		221E37AE169B604C0086CDDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221E37B7169B604C0086CDDE /* main.cpp in Sources */,
+				221E37C5169CC7E80086CDDE /* Headers.cpp in Sources */,
+				221E37C9169F2BCC0086CDDE /* TCPClient.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		221E37BA169B604C0086CDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		221E37BB169B604C0086CDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		221E37BD169B604C0086CDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		221E37BE169B604C0086CDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		221E37AC169B604C0086CDDE /* Build configuration list for PBXProject "Download" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221E37BA169B604C0086CDDE /* Debug */,
+				221E37BB169B604C0086CDDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		221E37BC169B604C0086CDDE /* Build configuration list for PBXNativeTarget "Download" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221E37BD169B604C0086CDDE /* Debug */,
+				221E37BE169B604C0086CDDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 221E37A9169B604C0086CDDE /* Project object */;
+}
