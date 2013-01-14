@@ -14,6 +14,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 #define MAX_MSG_SZ      1024
 

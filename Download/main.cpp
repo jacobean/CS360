@@ -15,6 +15,10 @@
 #include <unistd.h>
 #include <errno.h>
 #include <sstream>
+#include <cstdlib>
+#include <cstdio>
+#include <stdarg.h>
+#include <string.h>
 
 #include "Headers.h"
 
