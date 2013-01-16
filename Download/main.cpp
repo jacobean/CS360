@@ -43,6 +43,7 @@ void print_usage() {
 
 int main(int argc, char **argv) {
     char * host;
+    char * portStr;
     int port;
     char * resource;
     
@@ -74,7 +75,18 @@ int main(int argc, char **argv) {
         exit(EXIT_FAILURE);
     }
     
-    if (i < argc) stringstream(argv[i++]) >> port;
+    if (i < argc) {
+        portStr = argv[i++];
+
+        for (int i = 0; i < strlen(portStr); i++) {
+            if (!isdigit(portStr[i])) {
+                cerr << "Invalid port.\n";
+                exit(EXIT_FAILURE);
+            }
+        }
+        
+        port = atoi(portStr);
+    }
     else {
         print_usage();
         exit(EXIT_FAILURE);
