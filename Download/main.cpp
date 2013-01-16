@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
         }
     }
     
-    if (argc != 4) {
+    if ((!debug && argc != 4) || (debug && argc != 5)) {
         print_usage();
         exit(EXIT_FAILURE);
     }
@@ -144,6 +144,7 @@ int main(int argc, char **argv) {
         bytes = send( socketHandle, serverRequest+totalBytes, strlen(serverRequest), 0 );
         if (bytes == -1) {
             close(socketHandle);
+            cerr << "No response.\n";
             exit(EXIT_FAILURE);
         } else totalBytes += bytes;
     }
