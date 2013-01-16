@@ -37,6 +37,10 @@ void dprintf(const char *format, ...) {
     cout << "\n";
 }
 
+void print_usage() {
+    cerr << "Usage: download [-d] host port resource\n";
+}
+
 int main(int argc, char **argv) {
     char * host;
     int port;
@@ -57,23 +61,33 @@ int main(int argc, char **argv) {
         }
     }
     
+    if (argc != 4) {
+        print_usage();
+        exit(EXIT_FAILURE);
+    }
+    
     int i = optind;
 
     if (i < argc) host = argv[i++];
     else {
-        cerr << "Missing argument for host.\n";
+        print_usage();
         exit(EXIT_FAILURE);
     }
     
     if (i < argc) stringstream(argv[i++]) >> port;
     else {
-        cerr << "Missing argument for port.\n";
+        print_usage();
         exit(EXIT_FAILURE);
     }
     
     if (i < argc) resource = argv[i++];
     else {
-        cerr << "Missing argument for resource.\n";
+        print_usage();
+        exit(EXIT_FAILURE);
+    }
+    
+    if (port < 1) {
+        cerr << "Invalid port.\n";
         exit(EXIT_FAILURE);
     }
     
@@ -115,6 +129,7 @@ int main(int argc, char **argv) {
     if (debug) dprintf("Connecting to socket");
     if ((connect(socketHandle, (struct sockaddr *)&remoteSocketInfo, sizeof(sockaddr_in)) < 0)) {
         close(socketHandle);
+        cerr << "Couldn't connect to " << host << " on port " << port << ".\n";
         exit(EXIT_FAILURE);
     }
     if (debug) dprintf("Successfully connected");
