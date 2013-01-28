@@ -1,0 +1,168 @@
+TBasic Server
+v5
+r1
+cCheck dependencies
+cCompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.o" "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.o" "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.o" "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/CQueue.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd "/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server" normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c00000000503F1B7700000000000000AA
+t1346313079
+s170
+
+N/Users/tdixon/Documents/CS360/Basic Server/Basic Server/CQueue.cpp
+c0000000050F9865D000000000000023D
+t1358530141
+s573
+
+N/Users/tdixon/Documents/CS360/Basic Server/Basic Server/CQueue.h
+c0000000050F981070000000000000111
+t1358528775
+s273
+
+N/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp
+c0000000050F9D7060000000000000B5E
+t1358550790
+s2910
+
+N/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.h
+c0000000050F87FF9000000000000011D
+t1358462969
+s285
+
+N/Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp
+c0000000050F9D7300000000000000568
+t1358550832
+s1384
+i<iostream>
+i<thread>
+i"WebServer.cpp"
+i<v8.h>
+
+N/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/Basic Server.LinkFileList
+c0000000050FA4E99000000000000017B
+t1358581401
+s379
+
+N/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.o
+t1358581401
+s1912
+
+N/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.o
+t1358581401
+s1920
+
+N/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.o
+t1358581401
+s147036
+
+N/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server
+t2
+s0
+
+N/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server.dSYM
+t2
+s0
+
+N/usr/local/include/v8.h
+c0000000050C6316200000000000268B0
+t1355166050
+s157872
+
+N/usr/local/include/v8stdint.h
+c0000000050C63162000000000000085C
+t1355166050
+s2140
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies4791859f8aaab641^badc909f8aaab641^---0#1#0#--18"Check dependencies36"512C5CF6-BD17-4BED-912B-3CE4E75D0E77-
+
+CCompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.o" "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/CQueue.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s380274201.273230
+e380274201.831880
+r1
+xCompileC
+xbuild/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.o
+x/Users/tdixon/Documents/CS360/Basic Server/Basic Server/CQueue.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/tdixon/Documents/CS360/Basic Server/Basic Server/CQueue.cppeb1d461986aab641^1ff8d41986aab641^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/CQueue.cpp0000000000000000^2194"CompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.o" "Basic Server/CQueue.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/tdixon/Documents/CS360/Basic Server"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Basic Server.hmap" "-I/Users/tdixon/Documents/CS360/Basic Server/build/Release/include" -I/usr/local/include "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/DerivedSources/x86_64" "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/DerivedSources" "-F/Users/tdixon/Documents/CS360/Basic Server/build/Release" -MMD -MT dependencies -MF "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.d" --serialize-diagnostics "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.dia" -c "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/CQueue.cpp" -o "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.o"36"5D86BA84-A722-45F1-8FD1-325C1D440B69-
+
+CCompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.o" "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s380274201.273221
+e380274201.639731
+r1
+xCompileC
+xbuild/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.o
+x/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp:44:25: warning: implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]
+o            while ((b = read(socketConnection, buffer, 256)) > 0);
+o                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o1 warning generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Compile /Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cppa31e461986aab641^50c3a31986aab641^-332"/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp:44:25: warning: implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]            while ((b = read(socketConnection, buffer, 256)) > 0);                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@76"Implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int'-380274201#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@89"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/WebServer.cpp0000000000000000^43#24#43#24#843#0#14"Semantic Issue2(3@89"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/WebServer.cpp0000000000000000^43#24#43#59#843#34#3@89"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/WebServer.cpp0000000000000000^43#22#43#23#841#0#-0#0#0#-19%DVTDocumentLocation4@89"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/WebServer.cpp0000000000000000^2212"CompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.o" "Basic Server/WebServer.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/tdixon/Documents/CS360/Basic Server"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Basic Server.hmap" "-I/Users/tdixon/Documents/CS360/Basic Server/build/Release/include" -I/usr/local/include "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/DerivedSources/x86_64" "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/DerivedSources" "-F/Users/tdixon/Documents/CS360/Basic Server/build/Release" -MMD -MT dependencies -MF "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.d" --serialize-diagnostics "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.dia" -c "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp" -o "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.o"36"829223A8-5A84-4B50-8217-340D5B8E2FD2-
+
+CCompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.o" "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s380274201.273216
+e380274201.797945
+r1
+xCompileC
+xbuild/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.o
+x/Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp:11:
+o/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp:44:25: warning: implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]
+o            while ((b = read(socketConnection, buffer, 256)) > 0);
+o                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o1 warning generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp9f1f461986aab641^aa45cc1986aab641^-423"In file included from /Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp:11:/Users/tdixon/Documents/CS360/Basic Server/Basic Server/WebServer.cpp:44:25: warning: implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]            while ((b = read(socketConnection, buffer, 256)) > 0);                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@76"Implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int'-380274201#18446744073709551615#0#1(2@90"In file included from /Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp:11:-380274201#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@84"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/main.cpp0000000000000000^10#9#10#9#185#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/WebServer.cpp0000000000000000^43#24#43#24#843#0#14"Semantic Issue2(3@89"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/WebServer.cpp0000000000000000^43#24#43#59#843#34#3@89"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/WebServer.cpp0000000000000000^43#22#43#23#841#0#-0#0#0#-19%DVTDocumentLocation4@84"file://localhost/Users/tdixon/Documents/CS360/Basic%20Server/Basic%20Server/main.cpp0000000000000000^2182"CompileC "build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.o" "Basic Server/main.cpp" normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/tdixon/Documents/CS360/Basic Server"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Basic Server.hmap" "-I/Users/tdixon/Documents/CS360/Basic Server/build/Release/include" -I/usr/local/include "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/DerivedSources/x86_64" "-I/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/DerivedSources" "-F/Users/tdixon/Documents/CS360/Basic Server/build/Release" -MMD -MT dependencies -MF "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.d" --serialize-diagnostics "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.dia" -c "/Users/tdixon/Documents/CS360/Basic Server/Basic Server/main.cpp" -o "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.o"36"9320FCF4-F8BB-4121-80CD-3600BACF3947-
+
+CGenerateDSYMFile "/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server.dSYM" "/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server"
+r0
+
+CLd "/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server" normal x86_64
+s380275359.576379
+e380275359.592954
+r0
+xLd
+x/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server
+xnormal
+xx86_64
+oUndefined symbols for architecture x86_64:
+o  "v8::HandleScope::HandleScope()", referenced from:
+o      _main in main.o
+o  "v8::HandleScope::~HandleScope()", referenced from:
+o      _main in main.o
+o  "v8::V8::DisposeGlobal(v8::internal::Object**)", referenced from:
+o      _main in main.o
+o  "v8::Script::Run()", referenced from:
+o      _main in main.o
+o  "v8::Script::Compile(v8::Handle<v8::String>, v8::ScriptOrigin*, v8::ScriptData*, v8::Handle<v8::String>)", referenced from:
+o      _main in main.o
+o  "v8::String::AsciiValue::AsciiValue(v8::Handle<v8::Value>)", referenced from:
+o      _main in main.o
+o  "v8::String::AsciiValue::~AsciiValue()", referenced from:
+o      _main in main.o
+o  "v8::String::New(char const*, int)", referenced from:
+o      _main in main.o
+o  "v8::Context::New(v8::ExtensionConfiguration*, v8::Handle<v8::ObjectTemplate>, v8::Handle<v8::Value>)", referenced from:
+o      _main in main.o
+o  "v8::Context::Exit()", referenced from:
+o      _main in main.o
+o  "v8::Context::Enter()", referenced from:
+o      _main in main.o
+old: symbol(s) not found for architecture x86_64
+oclang: error: linker command failed with exit code 1 (use -v to see invocation)
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Link /Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server07b5939f8aaab641^fbca979f8aaab641^-1158"Undefined symbols for architecture x86_64:  "v8::HandleScope::HandleScope()", referenced from:      _main in main.o  "v8::HandleScope::~HandleScope()", referenced from:      _main in main.o  "v8::V8::DisposeGlobal(v8::internal::Object**)", referenced from:      _main in main.o  "v8::Script::Run()", referenced from:      _main in main.o  "v8::Script::Compile(v8::Handle<v8::String>, v8::ScriptOrigin*, v8::ScriptData*, v8::Handle<v8::String>)", referenced from:      _main in main.o  "v8::String::AsciiValue::AsciiValue(v8::Handle<v8::Value>)", referenced from:      _main in main.o  "v8::String::AsciiValue::~AsciiValue()", referenced from:      _main in main.o  "v8::String::New(char const*, int)", referenced from:      _main in main.o  "v8::Context::New(v8::ExtensionConfiguration*, v8::Handle<v8::ObjectTemplate>, v8::Handle<v8::Value>)", referenced from:      _main in main.o  "v8::Context::Exit()", referenced from:      _main in main.o  "v8::Context::Enter()", referenced from:      _main in main.old: symbol(s) not found for architecture x86_64clang: error: linker command failed with exit code 1 (use -v to see invocation)24(21%IDEActivityLogMessage2@50""v8::HandleScope::HandleScope()", referenced from:-380275359#43#53#-2#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#96#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@51""v8::HandleScope::~HandleScope()", referenced from:-380275359#118#54#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#172#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65""v8::V8::DisposeGlobal(v8::internal::Object**)", referenced from:-380275359#194#68#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#262#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@37""v8::Script::Run()", referenced from:-380275359#284#40#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#324#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@123""v8::Script::Compile(v8::Handle<v8::String>, v8::ScriptOrigin*, v8::ScriptData*, v8::Handle<v8::String>)", referenced from:-380275359#346#126#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#472#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@77""v8::String::AsciiValue::AsciiValue(v8::Handle<v8::Value>)", referenced from:-380275359#494#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#574#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@57""v8::String::AsciiValue::~AsciiValue()", referenced from:-380275359#596#60#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#656#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@53""v8::String::New(char const*, int)", referenced from:-380275359#678#56#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#734#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@120""v8::Context::New(v8::ExtensionConfiguration*, v8::Handle<v8::ObjectTemplate>, v8::Handle<v8::Value>)", referenced from:-380275359#756#123#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#879#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@39""v8::Context::Exit()", referenced from:-380275359#901#42#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#943#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@40""v8::Context::Enter()", referenced from:-380275359#965#43#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-380275359#1008#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@43"Symbol(s) not found for architecture x86_64-380275359#1030#48#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-380275359#1078#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--0#0#0#--802"Ld "build/Release/Basic Server" normal x86_64    cd "/Users/tdixon/Documents/CS360/Basic Server"    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk "-L/Users/tdixon/Documents/CS360/Basic Server/build/Release" -L/usr/local/lib "-F/Users/tdixon/Documents/CS360/Basic Server/build/Release" -filelist "/Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/Basic Server.LinkFileList" -mmacosx-version-min=10.7 /usr/local/lib/libv8_snapshot.a -stdlib=libc++ -o "/Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server"36"0EBB964E-20A4-44E4-A84A-8EF81A7225A0-
+

@@ -9,7 +9,6 @@
 #ifndef __Download__Headers__
 #define __Download__Headers__
 
-#include <iostream>
 #include <vector>
 
 #endif /* defined(__Download__Headers__) */

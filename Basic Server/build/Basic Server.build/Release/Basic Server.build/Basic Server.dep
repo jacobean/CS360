@@ -1,0 +1,5 @@
+60833fc7a706bc3588921e4b054d4ced b2da64f340ac81a2f4993dc3aba56d44 ffffffffffffffffffffffffffffffff 0 /Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/tdixon/Documents/CS360/Basic Server/build/Release/Basic Server.dSYM
+0000000050f9865d000000000000023d 277a3054d76b217b4f494b8e8eaa72db ffffffffffffffffffffffffffffffff 1912 /Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/CQueue.o
+0000000050f9d7060000000000000b5e f3e9449ab9aa98d8a6de1fb776e29578 ffffffffffffffffffffffffffffffff 1920 /Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/WebServer.o
+0000000050c631540000000000026686 b4104b0999f848e061054a72fd07c147 ffffffffffffffffffffffffffffffff 147036 /Users/tdixon/Documents/CS360/Basic Server/build/Basic Server.build/Release/Basic Server.build/Objects-normal/x86_64/main.o
