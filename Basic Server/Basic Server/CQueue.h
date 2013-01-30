@@ -11,6 +11,8 @@
 
 #include <iostream>
 #include <queue>
+#include <mutex>
+#include <condition_variable>
 
 class CQueue {
 private:

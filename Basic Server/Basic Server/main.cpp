@@ -9,6 +9,7 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
+#include <linux/limits.h>
 
 #include "WebServer.h"
 #include "Static.h"

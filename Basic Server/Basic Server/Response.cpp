@@ -10,8 +10,11 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-#include <sys/uio.h>
+//#include <sys/uio.h>
+#include <sys/sendfile.h>
 #include <dirent.h>
+#include <string.h>
+#include <algorithm>
 
 #include "Response.h"
 
@@ -84,8 +87,8 @@ Response* Response::sendFile(string path) {
             setHeader("Content-Type", fileType);
             setHeader("Content-Length", to_string(path_stats.st_size));
             sendHeaders();
-            off_t offset;
-            int s = ::sendfile(fd, socket, offset = 0, &path_stats.st_size, nullptr, 0);
+            off_t offset = 0;
+            int s = ::sendfile(socket, fd, &offset, path_stats.st_size);
             
             ::close(fd);
             ::close(socket);

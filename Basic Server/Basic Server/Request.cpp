@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Trevor Dixon. All rights reserved.
 //
 
-#include <regex>
+#include <boost/regex.hpp>
 #include <sstream>
 
 #include <unistd.h>
@@ -15,6 +15,7 @@
 #include "Headers.h"
 
 using namespace std;
+using namespace boost;
 
 Request::Request(int socketConnection) {
     // Get method and url from the first line

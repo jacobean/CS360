@@ -10,6 +10,7 @@
 #define __Basic_Server__Static__
 
 #include <iostream>
+#include <functional>
 
 #include "Request.h"
 #include "Response.h"
