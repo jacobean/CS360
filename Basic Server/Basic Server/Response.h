@@ -12,10 +12,8 @@
 #include <iostream>
 #include <map>
 
-#endif /* defined(__Basic_Server__Response__) */
-
 class Response {
-
+    
 public:
     
     Response(int socket);
@@ -31,3 +29,7 @@ private:
     void sendHeaders();
     
 };
+
+
+#endif /* defined(__Basic_Server__Response__) */
+

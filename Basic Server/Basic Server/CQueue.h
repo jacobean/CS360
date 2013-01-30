@@ -12,8 +12,6 @@
 #include <iostream>
 #include <queue>
 
-#endif /* defined(__Basic_Server__CQueue__) */
-
 class CQueue {
 private:
     std::queue <int> q;
@@ -24,3 +22,5 @@ public:
     void push(int s);
     int pop();
 };
+
+#endif /* defined(__Basic_Server__CQueue__) */

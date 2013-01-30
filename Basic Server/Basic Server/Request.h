@@ -12,11 +12,8 @@
 #include <iostream>
 #include <map>
 
-#endif /* defined(__Basic_Server__Request__) */
-
-
 class Request {
-
+    
 public:
     
     Request(int socketConnection);
@@ -34,3 +31,7 @@ private:
     std::string body;
     
 };
+
+#endif /* defined(__Basic_Server__Request__) */
+
+

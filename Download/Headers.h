@@ -11,9 +11,9 @@
 
 #include <vector>
 
-#endif /* defined(__Download__Headers__) */
-
 namespace Headers {
     char* GetLine(int fds);
     void GetHeaderLines(std::vector<char *> &headerLines, int skt, bool envformat);
 }
+
+#endif /* defined(__Download__Headers__) */

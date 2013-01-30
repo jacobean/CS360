@@ -16,15 +16,13 @@
 #include "Request.h"
 #include "Response.h"
 
-#endif /* defined(__Basic_Server__WebServer__) */
-
 class WebServer {
     
 public:
     
     WebServer(std::function<void(Request, Response)> handler);
     void listen(int port);
-
+    
 private:
     
     int socketHandle;
@@ -37,8 +35,10 @@ private:
     
     void handleConnections();
     void handleRequest(int socketConnection, int t);
-
+    
     void acceptConnections();
     void bindSocket();
     void initSocket();
 };
+
+#endif /* defined(__Basic_Server__WebServer__) */

@@ -8,17 +8,24 @@
 
 #include <iostream>
 #include <thread>
+
 #include "WebServer.h"
+#include "Static.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    WebServer ws([](Request req, Response res) {
-        res.send("Hello there from cpp\n");
-        //res.sendFile("/Users/tdixon/tmp/test.txt");
-    });
+    WebServer ws(Static::load("hmmmm"));
     ws.listen(8888);
     
     return 0;
 }
 
+/*
+ [](Request req, Response res) {
+ cout << "REQUEST" << endl;
+ res.setHeader("Content-Type", "application/json");
+ res.send("Web server");
+ //res.sendFile("/Users/tdixon/tmp/test.txt");
+ }
+*/
