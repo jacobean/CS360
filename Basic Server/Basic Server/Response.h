@@ -12,22 +12,29 @@
 #include <iostream>
 #include <map>
 
+#include "Request.h"
+
 class Response {
     
 public:
     
-    Response(int socket);
+    Response(int, Request);
     int responseCode = 200;
-    Response* setHeader(std::string key, std::string value);
+    Response* setHeader(std::string, std::string);
+    Response* removeHeader(std::string);
     Response* send(std::string);
     Response* sendFile(std::string);
+    Response* sendDirListing(std::string);
+    Response* redirect(std::string);
     
 private:
     
     int socket;
+    Request* req;
     std::map<std::string, std::string> headers;
     void sendHeaders();
     
+    static std::map<std::string, std::string> mime;
 };
 
 

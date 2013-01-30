@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <thread>
+#include <unistd.h>
 
 #include "WebServer.h"
 #include "Static.h"
@@ -15,17 +16,11 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    WebServer ws(Static::load("hmmmm"));
+    char cwd[PATH_MAX];
+    getcwd(cwd, sizeof(cwd));
+    
+    WebServer ws(Static::load(cwd));
     ws.listen(8888);
     
     return 0;
 }
-
-/*
- [](Request req, Response res) {
- cout << "REQUEST" << endl;
- res.setHeader("Content-Type", "application/json");
- res.send("Web server");
- //res.sendFile("/Users/tdixon/tmp/test.txt");
- }
-*/

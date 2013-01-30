@@ -13,7 +13,7 @@ using namespace std;
 namespace Static {
     function<void(Request, Response)> load(string path) {
         return [path](Request req, Response res) {
-            res.send("WOO HOO " + path);
+            res.sendFile(path + req.getUrl());
         };
     }
 }

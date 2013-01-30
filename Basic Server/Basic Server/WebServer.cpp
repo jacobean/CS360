@@ -29,7 +29,7 @@ void WebServer::handleConnections() {
 
 void WebServer::handleRequest(int socketConnection, int t) {
     Request req(socketConnection);
-    Response res(socketConnection);
+    Response res(socketConnection, req);
     
     handler(req, res);
 }
