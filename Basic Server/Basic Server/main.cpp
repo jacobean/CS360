@@ -23,7 +23,10 @@ int main(int argc, const char * argv[]) {
     char cwd[PATH_MAX];
     getcwd(cwd, sizeof(cwd));
     
-    WebServer ws(Static::load(cwd));
+    WebServer ws([cwd](Request req, Response res) {
+        res.sendFile(cwd + req.getUrl());
+    });
+    
     ws.listen(8888);
     
     return 0;
