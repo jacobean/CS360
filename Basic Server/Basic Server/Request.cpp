@@ -70,3 +70,14 @@ string Request::getBody() {
 string Request::getHost() {
     return host;
 }
+
+string Request::getExtension() {
+    string extension;
+    string::size_type idx = url.rfind('.');
+    
+    if (idx != string::npos) {
+        extension = url.substr(idx + 1);
+    }
+
+    return extension;
+}

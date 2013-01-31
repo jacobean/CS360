@@ -75,13 +75,8 @@ Response* Response::sendFile(string path) {
             // is a file
             int fd = open(path.c_str(), O_RDONLY);
             
-            string extension;
-            string::size_type idx = path.rfind('.');
-            
-            if (idx != string::npos) {
-                extension = path.substr(idx + 1);
-            }
-            
+            string extension = req->getExtension();
+
             string fileType;
             if (mime.count(extension)) {
                 fileType = mime[extension];

@@ -21,6 +21,7 @@ public:
     std::string getUrl();
     std::string getBody();
     std::string getHost();
+    std::string getExtension();
     
 private:
     
@@ -29,7 +30,6 @@ private:
     std::string host;
     std::map<std::string, std::string> headers;
     std::string body;
-    
 };
 
 #endif /* defined(__Basic_Server__Request__) */
