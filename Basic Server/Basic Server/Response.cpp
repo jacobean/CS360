@@ -10,8 +10,13 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-//#include <sys/uio.h>
+
+#ifdef __APPLE__
+#include <sys/uio.h>
+#else
 #include <sys/sendfile.h>
+#endif
+
 #include <dirent.h>
 #include <string.h>
 #include <algorithm>
@@ -60,7 +65,7 @@ Response* Response::sendFile(string path) {
                 return sendFile(path + "index.html");
             } else {
                 // redirect to add trailing slash if necessary
-                if (char ch = *req->getUrl().rbegin() != '/')
+                if (*req->getUrl().rbegin() != '/')
                     return redirect(req->getUrl() + "/");
                 
                 // list directory
@@ -88,7 +93,11 @@ Response* Response::sendFile(string path) {
             setHeader("Content-Length", to_string(path_stats.st_size));
             sendHeaders();
             off_t offset = 0;
+#ifdef __APPLE__
+            int s = ::sendfile(fd, socket, offset, &path_stats.st_size, nullptr, 0);
+#else
             int s = ::sendfile(socket, fd, &offset, path_stats.st_size);
+#endif
             
             ::close(fd);
             ::close(socket);
@@ -98,8 +107,10 @@ Response* Response::sendFile(string path) {
     } else {
         // stat call failed
         responseCode = 404;
-        send("Not found");
+        return send("Not found");
     }
+    
+    return this;
 }
 
 Response* Response::sendDirListing(string path) {
@@ -119,18 +130,18 @@ Response* Response::sendDirListing(string path) {
         closedir (dir);
     } else {
         responseCode = 404;
-        send("Not found");
+        return send("Not found");
     }
     
     response += "</ul></body></html>";
     
-    send(response);
+    return send(response);
 }
 
 Response* Response::redirect(std::string url) {
     responseCode = 301;
     setHeader("Location", url);
-    send("<a href=\"" + url + "\">" + url + "</a>");
+    return send("<a href=\"" + url + "\">" + url + "</a>");
 }
 
 void Response::sendHeaders() {

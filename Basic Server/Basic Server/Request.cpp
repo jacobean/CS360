@@ -6,16 +6,20 @@
 //  Copyright (c) 2013 Trevor Dixon. All rights reserved.
 //
 
-#include <boost/regex.hpp>
 #include <sstream>
-
 #include <unistd.h>
 
 #include "Request.h"
 #include "Headers.h"
 
 using namespace std;
+
+#ifdef __llvm__
+#include <regex>
+#else
+#include <boost/regex.hpp>
 using namespace boost;
+#endif
 
 Request::Request(int socketConnection) {
     // Get method and url from the first line
