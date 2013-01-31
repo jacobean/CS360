@@ -13,6 +13,7 @@
 		22BAEF9716B25F8F00F23B7B /* Headers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22BAEF9516B25F8F00F23B7B /* Headers.cpp */; };
 		22BAEF9A16B2612300F23B7B /* Request.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22BAEF9816B2612300F23B7B /* Request.cpp */; };
 		22BAEF9D16B448DB00F23B7B /* Response.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22BAEF9B16B448DA00F23B7B /* Response.cpp */; };
+		22BAEFB216B9ED6400F23B7B /* Static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22BAEFB016B9ED6400F23B7B /* Static.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		22BAEF9916B2612300F23B7B /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		22BAEF9B16B448DA00F23B7B /* Response.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Response.cpp; sourceTree = "<group>"; };
 		22BAEF9C16B448DA00F23B7B /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		22BAEFB016B9ED6400F23B7B /* Static.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Static.cpp; sourceTree = "<group>"; };
+		22BAEFB116B9ED6400F23B7B /* Static.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Static.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 		221E37DC16A765170086CDDE /* Basic Server */ = {
 			isa = PBXGroup;
 			children = (
+				22BAEFB016B9ED6400F23B7B /* Static.cpp */,
+				22BAEFB116B9ED6400F23B7B /* Static.h */,
 				22BAEF9516B25F8F00F23B7B /* Headers.cpp */,
 				22BAEF9616B25F8F00F23B7B /* Headers.h */,
 				221E37DD16A765170086CDDE /* main.cpp */,
@@ -144,6 +149,7 @@
 				22BAEF9716B25F8F00F23B7B /* Headers.cpp in Sources */,
 				22BAEF9A16B2612300F23B7B /* Request.cpp in Sources */,
 				22BAEF9D16B448DB00F23B7B /* Response.cpp in Sources */,
+				22BAEFB216B9ED6400F23B7B /* Static.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
