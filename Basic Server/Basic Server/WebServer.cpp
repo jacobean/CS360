@@ -19,6 +19,11 @@
 
 using namespace std;
 
+WebServer::WebServer(std::function<void(Request, Response)> handler) {
+    this->handler = handler;
+    initSocket();
+}
+
 void WebServer::handleConnections() {
     int socketConnection;
     while ((socketConnection = accept(socketHandle, NULL, NULL)) > 0) {
@@ -30,14 +35,9 @@ void WebServer::handleConnections() {
 
 void WebServer::handleRequest(int socketConnection, int t) {
     Request req(socketConnection);
-    Response res(socketConnection, req);
+    Response res(socketConnection, &req);
     
     handler(req, res);
-}
-
-WebServer::WebServer(std::function<void(Request, Response)> handler) {
-    this->handler = handler;
-    initSocket();
 }
 
 void WebServer::listen(int port) {

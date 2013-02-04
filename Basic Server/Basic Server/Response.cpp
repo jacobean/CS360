@@ -27,9 +27,9 @@ using namespace std;
 
 const char* nl = "\r\n";
 
-Response::Response(int socket, Request req) {
+Response::Response(int socket, Request* req) {
     this->socket = socket;
-    this->req = &req;
+    this->req = req;
 }
 
 Response* Response::setHeader(string key, string value ) {
@@ -118,7 +118,7 @@ Response* Response::sendDirListing(string path) {
     DIR *dir;
     struct dirent *ent;
     if ((dir = opendir(path.c_str())) != NULL) {
-
+        
         while ((ent = readdir (dir)) != NULL) {
             response += string("<li><a href=\"") + ent->d_name + "\">" + ent->d_name + "</a></li>";
         }
@@ -133,13 +133,58 @@ Response* Response::sendDirListing(string path) {
     return send(response);
 }
 
+Response* Response::execute(string path) {
+    struct stat path_stats;
+    vector<char *> env = CGIEnvironment(path);
+    
+    if (stat(path.c_str(), &path_stats) == 0) {
+        // file found, exec it
+        sendHeaders(false);
+        
+        int stocgi[2];
+        pipe(stocgi);
+        
+        int pid = fork();
+        if (pid == 0) {
+            dup2(socket, STDOUT_FILENO);
+            dup2(socket, STDERR_FILENO);
+            dup2(stocgi[0], STDIN_FILENO);
+
+            execve(path.c_str(), {}, (char**) &env[0]);
+            perror("exec");
+            
+            close(socket);
+            _exit(0);
+        } else {
+            string body = req->getBody();
+            write(stocgi[1], body.c_str(), body.size());
+            close(stocgi[0]);
+            close(stocgi[1]);
+            close(socket);
+        }
+
+        return this;
+    } else {
+        // stat call failed
+        responseCode = 404;
+        return send("Not found");
+    }
+    
+    return this;
+}
+
 Response* Response::redirect(std::string url) {
     responseCode = 301;
     setHeader("Location", url);
     return send("<a href=\"" + url + "\">" + url + "</a>");
 }
 
+
 void Response::sendHeaders() {
+    sendHeaders(true);
+}
+
+void Response::sendHeaders(bool finish) {
     string intro = "HTTP/1.1 " + to_string(responseCode) + nl;
     ::send(socket, intro.c_str(), intro.length(), 0);
     
@@ -148,7 +193,43 @@ void Response::sendHeaders() {
         ::send(socket, out.c_str(), out.size(), 0);
     });
     
-    ::send(socket, nl, strlen(nl), 0);
+    if (finish) ::send(socket, nl, strlen(nl), 0);
+}
+
+char* header(string key, string value, bool prefix) {
+    transform(key.begin(), key.end(), key.begin(), ::toupper);
+    replace(key.begin(), key.end(), '-', '_');
+    
+    if (prefix) key = "HTTP_" + key;
+    
+    return strdup(string(key + "=" + value).c_str());
+}
+
+char* header(string key, string value) {
+    return header(key, value, false);
+}
+
+vector<char *> Response::CGIEnvironment(string path) {
+    vector<char *> env;
+    
+    env.push_back("GATEWAY_INTERFACE=CGI/1.1");
+    env.push_back(header("QUERY_STRING", req->getQueryString()));
+    env.push_back(header("REQUEST_URI", req->getUrl()));
+    env.push_back(header("SCRIPT_NAME", req->getUrl()));
+    env.push_back(header("REQUEST_METHOD", req->getMethod()));
+    env.push_back(header("SCRIPT_FILENAME", path));
+    
+    std::map<std::string, std::string>::iterator iter;
+    for (iter = req->headers.begin(); iter != req->headers.end(); ++iter) {
+        string key = iter->first;
+        bool prefix = (key != "CONTENT_LENGTH" && key != "CONTENT_TYPE");
+        
+        env.push_back(header(key, iter->second, prefix));
+    }
+    
+    env.push_back(NULL);
+    
+    return env;
 }
 
 map<string, string> Response::mime = {

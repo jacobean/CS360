@@ -32,6 +32,12 @@ Request::Request(int socketConnection) {
     method = fl_matches[1];
     url = fl_matches[2];
     
+    // Get query string
+    size_t i = url.find("?");
+    bool hasQS = i != string::npos;
+    resource = url.substr(0, i);
+    queryString = hasQS ? url.substr(i+1) : "";
+    
     // Get headers
     cmatch h_matches;
     regex hrx("([a-zA-Z0-9-]+):\\s*(.+)");
@@ -40,13 +46,14 @@ Request::Request(int socketConnection) {
         regex_search(line.c_str(), h_matches, hrx);
         headers[h_matches[1]] = h_matches[2];
     }
-    
+
     // Deal with special headers
     if (headers.count("Content-Length")) {
         int length;
         stringstream(headers["Content-Length"]) >> length;
-        char body[length];
+        char body[length+1];
         read(socketConnection, body, length);
+        body[length] = '\0';
         this->body = body;
     }
     
@@ -55,28 +62,19 @@ Request::Request(int socketConnection) {
     }
 }
 
-string Request::getMethod() {
-    return method;
-}
-
-string Request::getUrl() {
-    return url;
-}
-
-string Request::getBody() {
-    return body;
-}
-
-string Request::getHost() {
-    return host;
-}
+string Request::getMethod() { return method; }
+string Request::getUrl() { return url; }
+string Request::getResource() { return resource;  }
+string Request::getQueryString() { return queryString; }
+string Request::getBody() { return body; }
+string Request::getHost() { return host; }
 
 string Request::getExtension() {
     string extension;
-    string::size_type idx = url.rfind('.');
+    string::size_type idx = resource.rfind('.');
     
     if (idx != string::npos) {
-        extension = url.substr(idx + 1);
+        extension = resource.substr(idx + 1);
     }
 
     return extension;

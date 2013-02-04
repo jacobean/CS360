@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
 
 class Request {
     
@@ -19,16 +20,20 @@ public:
     Request(int socketConnection);
     std::string getMethod();
     std::string getUrl();
+    std::string getResource();
+    std::string getQueryString();
     std::string getBody();
     std::string getHost();
     std::string getExtension();
+    std::map<std::string, std::string> headers;
     
 private:
     
     std::string method;
     std::string url;
+    std::string resource;
+    std::string queryString;
     std::string host;
-    std::map<std::string, std::string> headers;
     std::string body;
 };
 

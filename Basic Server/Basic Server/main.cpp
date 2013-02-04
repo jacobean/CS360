@@ -15,7 +15,6 @@
 #endif
 
 #include "WebServer.h"
-#include "Static.h"
 
 using namespace std;
 
@@ -23,8 +22,14 @@ int main(int argc, const char * argv[]) {
     char cwd[PATH_MAX];
     getcwd(cwd, sizeof(cwd));
     
-    WebServer ws([cwd](Request req, Response res) {
-        res.sendFile(cwd + req.getUrl());
+    WebServer ws([=](Request req, Response res) {
+        string extension = req.getExtension();
+
+        if (extension == "cgi" || extension == "pl") {
+            res.execute(cwd + req.getResource());
+        } else {
+            res.sendFile(cwd + req.getUrl());            
+        }
     });
     
     ws.listen(8888);

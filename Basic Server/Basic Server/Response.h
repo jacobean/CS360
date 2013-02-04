@@ -18,13 +18,14 @@ class Response {
     
 public:
     
-    Response(int, Request);
+    Response(int, Request*);
     int responseCode = 200;
     Response* setHeader(std::string, std::string);
     Response* removeHeader(std::string);
     Response* send(std::string);
     Response* sendFile(std::string);
     Response* sendDirListing(std::string);
+    Response* execute(std::string);
     Response* redirect(std::string);
     
 private:
@@ -32,7 +33,9 @@ private:
     int socket;
     Request* req;
     std::map<std::string, std::string> headers;
+    std::vector<char *> CGIEnvironment(std::string);
     void sendHeaders();
+    void sendHeaders(bool);
     
     static std::map<std::string, std::string> mime;
 };
