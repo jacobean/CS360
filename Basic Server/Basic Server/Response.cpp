@@ -164,8 +164,18 @@ Response* Response::execute(string path, string scriptFilename) {
             _exit(0);
         } else {
             close(p[0]);
-            string body = req->getBody();
-            write(p[1], body.c_str(), body.size());
+
+            const char* body = req->getBody().c_str();
+            size_t len = strlen(body);
+            int offset = 0;
+            int written = 0;
+            
+            while (written < len) {
+                written += write(p[1], &body[offset], len-written);
+            }
+
+            int status;
+            wait(&status);
             
             close(socket);
         }
