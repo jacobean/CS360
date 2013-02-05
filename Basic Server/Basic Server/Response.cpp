@@ -235,6 +235,15 @@ vector<char *> Response::CGIEnvironment(string path) {
     env.push_back(header("REQUEST_METHOD", req->getMethod()));
     env.push_back(header("SCRIPT_FILENAME", path));
     env.push_back(header("REDIRECT_STATUS", "200"));
+    env.push_back(header("SERVER_SOFTWARE", "Trevor's Server"));
+    env.push_back(header("SERVER_NAME", "Default"));
+    env.push_back(header("SERVER_PROTOCOL", req->getServerProtocol()));
+    env.push_back(header("SERVER_PORT", to_string(req->getPort())));
+//    env.push_back(header("PATH_INFO", ""));
+//    env.push_back(header("PATH_TRANSLATED", ""));
+//    env.push_back(header("REMOTE_HOST", ""));
+//    env.push_back(header("REMOTE_ADDR", ""));
+//    env.push_back(header("REMOTE_USER", ""));
     
     std::map<std::string, std::string>::iterator iter;
     for (iter = req->headers.begin(); iter != req->headers.end(); ++iter) {

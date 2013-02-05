@@ -22,6 +22,7 @@ public:
     
     WebServer(std::function<void(Request, Response)> handler);
     void listen(int port);
+    int getPort();
     
 private:
     

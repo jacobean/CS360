@@ -17,9 +17,11 @@ class Request {
     
 public:
     
-    Request(int socketConnection);
+    Request(int socketConnection, int port);
+    int getPort();
     std::string getMethod();
     std::string getUrl();
+    std::string getServerProtocol();
     std::string getResource();
     std::string getQueryString();
     std::string getBody();
@@ -29,8 +31,10 @@ public:
     
 private:
     
+    int port;
     std::string method;
     std::string url;
+    std::string serverProtocol;
     std::string resource;
     std::string queryString;
     std::string host;

@@ -34,7 +34,7 @@ void WebServer::handleConnections() {
 }
 
 void WebServer::handleRequest(int socketConnection, int t) {
-    Request req(socketConnection);
+    Request req(socketConnection, port);
     Response res(socketConnection, &req);
     
     handler(req, res);
@@ -106,3 +106,5 @@ void WebServer::initSocket() {
     // A socket client will specify the server address to connect to.
     socketInfo.sin_addr.s_addr = htonl(INADDR_ANY); // Translate long integer to network byte order.
 }
+
+int WebServer::getPort() { return port; }

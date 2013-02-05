@@ -21,8 +21,9 @@ using namespace std;
 using namespace boost;
 #endif
 
-Request::Request(int socketConnection) {
+Request::Request(int socketConnection, int port) {
     // Get method and url from the first line
+    this->port = port;
     string firstLine = Headers::GetLine(socketConnection);
     
     cmatch fl_matches;
@@ -31,6 +32,7 @@ Request::Request(int socketConnection) {
     
     method = fl_matches[1];
     url = fl_matches[2];
+    serverProtocol = fl_matches[3];
     
     // Get query string
     size_t i = url.find("?");
@@ -62,8 +64,10 @@ Request::Request(int socketConnection) {
     }
 }
 
+int Request::getPort() { return port; }
 string Request::getMethod() { return method; }
 string Request::getUrl() { return url; }
+string Request::getServerProtocol() { return serverProtocol; }
 string Request::getResource() { return resource;  }
 string Request::getQueryString() { return queryString; }
 string Request::getBody() { return body; }
