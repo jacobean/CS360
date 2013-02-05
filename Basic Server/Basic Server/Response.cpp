@@ -134,32 +134,39 @@ Response* Response::sendDirListing(string path) {
 }
 
 Response* Response::execute(string path) {
+    return execute(path, path);
+}
+
+#define READ_END 0
+#define WRITE_END 1
+
+Response* Response::execute(string path, string scriptFilename) {
     struct stat path_stats;
-    vector<char *> env = CGIEnvironment(path);
+    vector<char *> env = CGIEnvironment(scriptFilename);
     
     if (stat(path.c_str(), &path_stats) == 0) {
         // file found, exec it
         sendHeaders(false);
         
-        int stocgi[2];
-        pipe(stocgi);
+        int p[2];
+        pipe(p);
         
         int pid = fork();
         if (pid == 0) {
+            close(p[1]);
+            dup2(p[0], STDIN_FILENO);
             dup2(socket, STDOUT_FILENO);
-            dup2(socket, STDERR_FILENO);
-            dup2(stocgi[0], STDIN_FILENO);
 
             execve(path.c_str(), {}, (char**) &env[0]);
+
             perror("exec");
-            
             close(socket);
             _exit(0);
         } else {
+            close(p[0]);
             string body = req->getBody();
-            write(stocgi[1], body.c_str(), body.size());
-            close(stocgi[0]);
-            close(stocgi[1]);
+            write(p[1], body.c_str(), body.size());
+            
             close(socket);
         }
 
@@ -218,11 +225,12 @@ vector<char *> Response::CGIEnvironment(string path) {
     env.push_back(header("SCRIPT_NAME", req->getUrl()));
     env.push_back(header("REQUEST_METHOD", req->getMethod()));
     env.push_back(header("SCRIPT_FILENAME", path));
+    env.push_back(header("REDIRECT_STATUS", "200"));
     
     std::map<std::string, std::string>::iterator iter;
     for (iter = req->headers.begin(); iter != req->headers.end(); ++iter) {
         string key = iter->first;
-        bool prefix = (key != "CONTENT_LENGTH" && key != "CONTENT_TYPE");
+        bool prefix = (key != "Content-Length" && key != "Content-Type");
         
         env.push_back(header(key, iter->second, prefix));
     }

@@ -24,11 +24,14 @@ int main(int argc, const char * argv[]) {
     
     WebServer ws([=](Request req, Response res) {
         string extension = req.getExtension();
+        string path = cwd + req.getResource();
 
         if (extension == "cgi" || extension == "pl") {
-            res.execute(cwd + req.getResource());
+            res.execute(path);
+        } else if (extension == "php") {
+            res.execute("/Users/tdixon/Applications/bin/php-cgi", path);
         } else {
-            res.sendFile(cwd + req.getUrl());            
+            res.sendFile(path);
         }
     });
     

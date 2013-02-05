@@ -26,6 +26,7 @@ public:
     Response* sendFile(std::string);
     Response* sendDirListing(std::string);
     Response* execute(std::string);
+    Response* execute(std::string, std::string);
     Response* redirect(std::string);
     
 private:
