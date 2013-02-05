@@ -9,6 +9,7 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
+#include <sys/stat.h>
 
 #ifdef __linux__
 #include <linux/limits.h>
@@ -19,9 +20,25 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+    // Get current working directory
     char cwd[PATH_MAX];
     getcwd(cwd, sizeof(cwd));
     
+    // Find php-cgi
+    char *path = getenv("PATH");
+    char *phpcgi;
+    bool phpfound = false;
+
+    char *dir;
+    struct stat path_stats;
+    for (dir = strtok(path, ":"); dir; dir = strtok(NULL, ":")) {
+        asprintf(&phpcgi, "%s/php-cgi", dir);
+        if (stat(phpcgi, &path_stats) == 0) {
+            phpfound = true;
+            break;
+        }
+    }
+
     WebServer ws([=](Request req, Response res) {
         string extension = req.getExtension();
         string path = cwd + req.getResource();
@@ -29,7 +46,11 @@ int main(int argc, const char * argv[]) {
         if (extension == "cgi" || extension == "pl") {
             res.execute(path);
         } else if (extension == "php") {
-            res.execute("/Users/tdixon/Applications/bin/php-cgi", path);
+            if (phpfound) res.execute(phpcgi, path);
+            else {
+                res.responseCode = 500;
+                res.send("PHP not found.");
+            }
         } else {
             res.sendFile(path);
         }

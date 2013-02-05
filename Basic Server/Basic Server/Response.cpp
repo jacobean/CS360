@@ -144,7 +144,7 @@ Response* Response::execute(string path, string scriptFilename) {
     struct stat path_stats;
     vector<char *> env = CGIEnvironment(scriptFilename);
     
-    if (stat(path.c_str(), &path_stats) == 0) {
+    if (stat(scriptFilename.c_str(), &path_stats) == 0) {
         // file found, exec it
         sendHeaders(false);
         
