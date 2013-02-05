@@ -138,9 +138,6 @@ Response* Response::execute(string path) {
     return execute(path, path);
 }
 
-#define READ_END 0
-#define WRITE_END 1
-
 Response* Response::execute(string path, string scriptFilename) {
     struct stat path_stats;
     vector<char *> env = CGIEnvironment(scriptFilename);
@@ -157,6 +154,7 @@ Response* Response::execute(string path, string scriptFilename) {
             close(p[1]);
             dup2(p[0], STDIN_FILENO);
             dup2(socket, STDOUT_FILENO);
+            dup2(socket, STDERR_FILENO);
 
             execve(path.c_str(), {}, (char**) &env[0]);
 
