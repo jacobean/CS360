@@ -1,0 +1,27 @@
+<!-- Thumbnails -->
+<div class="twelve columns">
+	<h1><?= $this->title ?></h1>
+</div>
+
+<div class="twelve columns">
+	<div class="row">
+		<?php $i = 0; foreach($this->images as $image): ?>
+
+		<?php $size = $image->getSize(); ?>
+
+		<div class="four mobile-two columns" style="float:left;<?php if ($i % 3 == 0) echo 'clear:both"' ?>">
+			<img src="../../public/images/uploaded/<?= $image->getFilename() ?>" <?= $size[3] ?>>
+
+			<div class="panel">
+				<h5><?= $image->getTitle() ?></h5>
+				<h6 class="subheader"><?= $image->getDescription() ?></h6>
+				<p>Rating: <?= $image->getRating() ?><br>Date: <?= @date('F j Y h:i:s A', $image->getDate()) ?></p>
+			</div>
+		</div>
+
+		<?php $i++; endforeach; ?>
+
+<!-- End Thumbnails -->
+
+	</div>
+</div>
