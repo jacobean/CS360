@@ -1,20 +1,5 @@
 <?php
 
-function output_iptc_data( $image_path ) {    
-    $size = getimagesize ( $image_path, $info);        
-     if(is_array($info)) {    
-        $iptc = iptcparse($info["APP13"]);
-        foreach (array_keys($iptc) as $s) {              
-            $c = count ($iptc[$s]);
-            for ($i=0; $i <$c; $i++) 
-            {
-                echo $s.' = '.$iptc[$s][$i].'<br>';
-            }
-        }                  
-    }             
-}
-
-
 class Image {
 	protected $title;
 	protected $description;
