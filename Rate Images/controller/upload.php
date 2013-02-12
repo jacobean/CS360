@@ -21,7 +21,7 @@ class Upload {
 	function handle_upload() {
 		ob_start();
 		$upload_handler = new UploadHandler(array(
-			'upload_dir' => '/Users/tdixon/Documents/CS360/Rate Images/public/images/uploaded/',
+			'upload_dir' => 'public/images/uploaded/',
 			'param_name' => 'file'
 		));
 		$result = json_decode(ob_get_flush());
