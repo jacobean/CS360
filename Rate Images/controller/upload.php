@@ -2,6 +2,8 @@
 
 class Upload {
 	function execute($path_params, $view) {
+		new Auth();
+
 		if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			return $this->handle_upload($view);
 
