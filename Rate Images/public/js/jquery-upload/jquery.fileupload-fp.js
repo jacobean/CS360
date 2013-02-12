@@ -108,7 +108,7 @@
                 options = $.extend({canvas: true}, options);
                 if (img) {
                     canvas = loadImage.scale(img, options);
-                    data.canvas = canvas;
+                     data.canvas = canvas;
                 }
                 return data;
             },
@@ -143,6 +143,10 @@
                 // Use canvas.mozGetAsFile directly, to retain the filename, as
                 // Gecko doesn't support the filename option for FormData.append:
                 if (data.canvas.mozGetAsFile) {
+                    name = name.replace(
+                        /\..+$/,
+                        '.' + type.substr(6)
+                    );
                     callback(data.canvas.mozGetAsFile(
                         (/^image\/(jpeg|png)$/.test(type) && name) ||
                             ((name && name.replace(/\..+$/, '')) ||
