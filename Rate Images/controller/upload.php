@@ -3,7 +3,7 @@
 class Upload {
 	function execute($path_params, $view) {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST')
-			return $this->handle_upload();
+			return $this->handle_upload($view);
 
 		$view->scripts = array(
 			'<script src="../../public/js/jquery-upload/vendor/jquery.ui.widget.js"></script>',
@@ -18,7 +18,18 @@ class Upload {
 		$view->render('upload.phtml');
 	}
 
-	function handle_upload() {
+	function handle_upload($view) {
+		$title = $_POST['title'];
+		$description = $_POST['description'];
+
+		if (
+			(strlen($title) > 50) ||
+			(strlen($description) > 200)
+		) {
+			$view->json = array('error' => 'Invalid parameters');
+			return $view->render('json.ptpl');
+		}
+
 		ob_start();
 		$upload_handler = new UploadHandler(array(
 			'upload_dir' => 'public/images/uploaded/',
@@ -28,8 +39,8 @@ class Upload {
 
 		$name = $result->file[0]->name;
 		$image = new Image($name);
-		$image->setTitle($_POST['title']);
-		$image->setDescription($_POST['description']);
+		$image->setTitle($title);
+		$image->setDescription($description);
 		$image->setDate();
 		$image->setRating(0);
 	}
