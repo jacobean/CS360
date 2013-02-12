@@ -2,6 +2,7 @@
 
 include 'lib/autoload.inc';
 date_default_timezone_set('America/Denver');
+session_start();
 
 $path_params = (preg_split('@/@', $_SERVER['PATH_INFO'], NULL, PREG_SPLIT_NO_EMPTY));
 $controller = array_shift($path_params);

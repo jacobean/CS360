@@ -2,7 +2,6 @@
 
 class Logout {
 	function execute($path_params, $view) {
-		session_start();
 		session_destroy();
 		session_write_close();
 		header('Location: ../login/');

@@ -2,8 +2,6 @@
 
 class Login {
 	function execute($path_params, $view) {
-		session_start();
-
 		if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			return $this->handle_login($view);
 

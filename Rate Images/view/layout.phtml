@@ -42,6 +42,9 @@
 
 					<ul class="right">
 						<li><a href="../upload/">Upload Image</a></li>
+						<?php if (isset($_SESSION['loggedin'])): ?>
+						<li><a href="../logout/">Logout</a></li>
+						<?php endif; ?>
 					</ul>
 				</section>
 
