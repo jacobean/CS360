@@ -1,0 +1,25 @@
+<div class="twelve columns">
+	<h1>Upload</h1>
+	<h5 class="subheader">Drag and drop images onto the page to upload them.</h5>
+</div>
+
+<div class="twelve columns">
+	<form>
+		<input id="file" name="file" type="file" data-url="../upload/">
+	</form>
+	<ul class="forms-container block-grid three-up"></ul>
+</div>
+
+<script id="image-panel-template" type="template/html">
+	<form>
+		<div class="panel">
+			<img src="<%= src %>">
+
+			<input type="text" class="twelve" placeholder="Title" name="title">
+			<textarea class="twelve" placeholder="Description" name="description"></textarea>
+			
+			<button class="button" type="submit">Upload</button>
+			<span class="upload-percent"></span>
+		</div>
+	</form>
+</script>

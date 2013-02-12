@@ -35,4 +35,27 @@
     });
   }
 
+  $('.vote-up').click(function(el) {
+    var $this = $(this),
+        image = $this.data('image');
+    
+    $.get('../api/' + image + '/vote_up');
+    
+    var ratingLabel = $this.closest('.attributes').find('.rating-label'),
+        rating = parseInt(ratingLabel.text());
+
+    ratingLabel.text(++rating);
+  });
+
+  $('.vote-down').click(function(el) {
+    var $this = $(this),
+        image = $this.data('image');
+    
+    $.get('../api/' + image + '/vote_down');
+
+    var ratingLabel = $this.closest('.attributes').find('.rating-label'),
+        rating = parseInt(ratingLabel.text());
+
+    ratingLabel.text(--rating);
+  });
 })(jQuery, this);

@@ -13,7 +13,7 @@
 	
 	<!-- Included CSS Files (Compressed) -->
 	<link rel="stylesheet" href="../../public/css/foundation.min.css">
-	<link rel="stylesheet" href="stylesheets/app.css">
+	<link rel="stylesheet" href="../../public/css/app.css">
 
 	<script src="../../public/js/modernizr.foundation.js"></script>
 </head>
@@ -74,9 +74,15 @@
 		</div>
 	</div>	
 	<!-- Included JS Files (Compressed) -->
-	<script src="../../public/js/jquery.js"></script>
 	<script src="../../public/js/foundation.min.js"></script>
-	
+	<?php
+		if (is_array($this->scripts)) {
+			foreach ($this->scripts as $script) {
+				echo $script . "\n";
+			}
+		}
+	?>
+
 	<!-- Initialize JS Plugins -->
 	<script src="../../public/js/app.js"></script>
 </body>

@@ -1,8 +1,8 @@
 <?php
 
-class Popular extends Controller {
+class Popular {
 	public function execute($path_params, $view) {
-		$images = Image::getAll('public/images/uploaded/');
+		$images = Image::getAll();
 
 		usort($images, function($a, $b) {
 			return $a->getRating() <= $b->getRating();
@@ -15,3 +15,5 @@ class Popular extends Controller {
 		$view->render('imagelist.phtml');
 	}
 }
+
+?>

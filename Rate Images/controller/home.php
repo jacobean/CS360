@@ -1,7 +1,9 @@
 <?php
 
-class Home extends Controller {
-	public function execute($path_params) {
-		$this->render('home.phtml');
+class Home {
+	public function execute($path_params, $view) {
+		$view->render('home.phtml');
 	}
 }
+
+?>

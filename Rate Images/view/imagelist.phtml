@@ -4,24 +4,30 @@
 </div>
 
 <div class="twelve columns">
-	<div class="row">
+	<ul class="block-grid three-up">
 		<?php $i = 0; foreach($this->images as $image): ?>
 
 		<?php $size = $image->getSize(); ?>
 
-		<div class="four mobile-two columns" style="float:left;<?php if ($i % 3 == 0) echo 'clear:both"' ?>">
+		<li>
+			<div class="panel">
 			<img src="../../public/images/uploaded/<?= $image->getFilename() ?>" <?= $size[3] ?>>
 
-			<div class="panel">
 				<h5><?= $image->getTitle() ?></h5>
 				<h6 class="subheader"><?= $image->getDescription() ?></h6>
-				<p>Rating: <?= $image->getRating() ?><br>Date: <?= @date('F j Y h:i:s A', $image->getDate()) ?></p>
+				<p class="attributes">
+					<strong>Rating</strong>: <span class="rating-label"><?= $image->getRating() ?></span>
+					<button class="tiny button vote-up" data-image="<?= $image->getFilename() ?>">Vote Up</button>
+					<button class="tiny button vote-down" data-image="<?= $image->getFilename() ?>">Vote Down</button>
+					<br>
+					<strong>Date</strong>: <?= @date('j M Y H:i', $image->getDate()) ?>
+				</p>
 			</div>
-		</div>
+		</li>
 
 		<?php $i++; endforeach; ?>
 
 <!-- End Thumbnails -->
 
-	</div>
+	</ul>
 </div>

@@ -1,5 +1,7 @@
 <?php
 
+define('IMAGES_BASE_PATH', 'public/images/uploaded/');
+
 class Image {
 	protected $title;
 	protected $description;
@@ -10,7 +12,9 @@ class Image {
 
 	protected $iptc;
 
-	public function Image($path) {
+	public function Image($filename) {
+		$path = IMAGES_BASE_PATH . $filename;
+
 		$this->iptc = new iptc($path);
 
 		$this->filename = basename($path);
@@ -35,17 +39,52 @@ class Image {
 	public function getDate() { return $this->date; }
 	public function getSize() { return $this->size; }
 
+	public function setTitle($title) {
+		$this->title = $title;
+		$this->iptc->set(IPTC_OBJECT_NAME, $title);
+		$this->iptc->write();
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->iptc->set(IPTC_CAPTION, $description);
+		$this->iptc->write();
+	}
+
+	public function setDate() {
+		$now = time();
+		$this->date = $now;
+		$this->iptc->set(IPTC_CREATED_DATE, date('ymd', $now));
+		$this->iptc->set(IPTC_CREATED_TIME, date('His', $now));
+		$this->iptc->write();
+	}
+
 	public function setRating($r) {
+		$this->rating = $r;
 		$this->iptc->set(IPTC_PRIORITY, $r);
 		$this->iptc->write();
 	}
 
-	static function getAll($dir) {
+	public function incRating() {
+		$this->setRating($this->rating + 1);
+	}
+
+	public function decRating() {
+		$this->setRating($this->rating - 1);
+	}
+
+	static function getAll() {
 		$images = array();
-		$files = scandir($dir);
+		$files = scandir(IMAGES_BASE_PATH);
 		foreach ($files as $file) {
-			if (substr($file, -3) != 'jpg') continue;
-			$images[] = new Image($dir . '/' . $file);
+			if (
+				substr($file, -3) != 'jpg' &&
+				substr($file, -4) != 'jpeg'
+			) continue;
+
+			$image = new Image($file);
+
+			$images[] = $image;
 		}
 
 		return $images;

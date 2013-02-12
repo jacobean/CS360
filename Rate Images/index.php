@@ -1,4 +1,5 @@
 <?php
+
 include 'lib/autoload.inc';
 date_default_timezone_set('America/Denver');
 
@@ -15,3 +16,5 @@ if (file_exists($path)) {
 	$t = new View();
 	$t->render('404.phtml');
 }
+
+?>

@@ -8,12 +8,16 @@ class View {
             $this->template_dir = $template_dir;
         }
     }
-    public function render($template_file) {
+    public function render($template_file, $use_layout = true) {
         if (file_exists($this->template_dir . $template_file)) {
-            ob_start();
-            include $this->template_dir . $template_file;
-            $this->content = ob_get_clean();
-            include $this->template_dir . 'layout.phtml';
+            if ($use_layout) {
+                ob_start();
+                include $this->template_dir . $template_file;
+                $this->content = ob_get_clean();
+                include $this->template_dir . 'layout.phtml';
+            } else {
+                include $this->template_dir . $template_file;
+            }
         } else {
             throw new Exception('no template file ' . $template_file . ' present in directory ' . $this->template_dir);
         }
@@ -22,7 +26,7 @@ class View {
         $this->vars[$name] = $value;
     }
     public function __get($name) {
-        return $this->vars[$name];
+        return isset($this->vars[$name]) ? $this->vars[$name] : null;
     }
 }
 ?>

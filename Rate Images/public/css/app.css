@@ -13,8 +13,13 @@
    Shared Styles
 ----------------------------------------- */
 
+.vote-up {
+	margin-left: 20px;
+}
 
+input[type="file"] { visibility: hidden; }
 
+.upload-percent { font-weight: bold; }
 /* -----------------------------------------
    Page Name 1
 ----------------------------------------- */

@@ -1,8 +1,8 @@
 <?php
 
-class Recent extends Controller {
+class Recent {
 	public function execute($path_params, $view) {
-		$images = Image::getAll('public/images/uploaded/');
+		$images = Image::getAll();
 
 		usort($images, function($a, $b) {
 			return $a->getDate() <= $b->getDate();
@@ -15,3 +15,5 @@ class Recent extends Controller {
 		$view->render('imagelist.phtml');
 	}
 }
+
+?>
